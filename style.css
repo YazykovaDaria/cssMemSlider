@@ -1,0 +1,138 @@
+body {}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    background-color: rgb(23, 25, 25, 0.5);
+}
+
+.container {
+
+    /*display: flex;
+    flex-direction: column;*/
+    display: grid;
+    grid-template-rows: max-content;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "botton botton "
+        "slide slide "
+        "description navigation";
+    row-gap: 2rem;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.radio-input {
+    visibility: hidden;
+    grid-area: botton;
+}
+
+.sliders {
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+    grid-area: slide;
+}
+
+/*.slider-container {
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    overflow: hidden;
+    width: inherit;
+}*/
+
+.slider {}
+
+.slide1 {}
+
+.slide-img {
+    width: 100%;
+}
+
+.slide2 {}
+
+.slide3 {}
+
+.slide4 {}
+
+.describtions {
+    grid-area: description;
+    display: flex;
+}
+
+.describtion1 {}
+
+.describtion2 {}
+
+.describtion3 {}
+
+.describtion4 {}
+
+.controls {
+    /*border: 2px solid black;
+    width: 10rem;*/
+    grid-area: navigation;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+label {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem 0.5rem;
+    transition: 0.3s;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+label:hover .label-style {
+    cursor: pointer;
+    background-color: aliceblue;
+    transition: 0.3s;
+}
+
+label:active .label-style {
+    background-color: rgb(95, 135, 160);
+}
+
+.controls .label-style {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border: 0.2rem solid white;
+    border-radius: 50%;
+}
+
+#slide1:checked~.slider>.slide1,
+#slide2:checked~.slider>.slide2,
+#slide3:checked~.slider>.slide3,
+#slide4:checked~.slider>.slide4 {
+    grid-area: slide;
+    /*-webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);*/
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "botton botton "
+            "slide slide "
+            "navigation navigation"
+            "description description";
+        justify-content: center;
+    }
+}
